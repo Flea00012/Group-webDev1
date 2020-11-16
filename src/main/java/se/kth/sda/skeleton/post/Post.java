@@ -18,7 +18,8 @@ public class Post {
     @ManyToOne
     private User poster;
 
-    //private List<Comment> comments;
+//    @OneToMany
+//    private List<Comment> comments;
 
     public Post() {
     }
@@ -43,4 +44,13 @@ public class Post {
     public void setPostBody(String postBody) {
         this.postBody = postBody;
     }
+
+//    public List<Comment> getComments() {
+//        return comments;
+//    }
+//
+//    public void setComments(List<Comment> comments) {
+//        this.comments = comments;
+//    }
+
 }
