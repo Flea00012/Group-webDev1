@@ -1,5 +1,7 @@
 package se.kth.sda.skeleton.comments;
 
+import se.kth.sda.skeleton.post.Post;
+
 import javax.persistence.*;
 import java.util.Date;
 
