@@ -19,6 +19,7 @@ public class Comment {
     @Column(columnDefinition = "TEXT")
     private String body;
 
+
     @Column(columnDefinition = "TEXT")
     private Date date;
 
@@ -28,10 +29,10 @@ public class Comment {
 
     public Comment() {}
 
-    public Comment(Long id, String body, Date date) {
+    public Comment(Long id, String body) {
         this.id = id;
         this.body = body;
-        this.date = date;
+        this.date = new Date();
     }
 
     public Long getId() {

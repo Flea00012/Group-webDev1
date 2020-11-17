@@ -21,8 +21,8 @@ public class CommentControllerTests {
     @Test
     public void testGetById() {
         // Arrange
-        Comment comment1 = new Comment(1L, "Comment text1", new Date());
-        Comment comment2 = new Comment(2L, "Comment text2", new Date());
+        Comment comment1 = new Comment(1L, "Comment text1");
+        Comment comment2 = new Comment(2L, "Comment text2");
         Mockito.when(commentService.getCommentById(1L))
                 .thenReturn(Optional.of(comment1));
 
