@@ -1,6 +1,7 @@
 package se.kth.sda.skeleton.comments;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,6 +11,7 @@ import java.util.Optional;
  * for persisting changes made to comments data to database.
  */
 
+@Service
 public class CommentService {
     @Autowired
     CommentRepository repository;
