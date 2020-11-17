@@ -19,7 +19,6 @@ public class Post {
     @ManyToOne
     private User user;
 
-
     //one post with many comments (save a post and all comments)
     @OneToMany(cascade = CascadeType.ALL)
     private List<Comment> comments;
@@ -48,13 +47,13 @@ public class Post {
         this.body = body;
     }
 
-    public List<Comment> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<Comment> comments) {
-        this.comments = comments;
-    }
+//    public List<Comment> getComments() {
+//        return comments;
+//    }
+//
+//    public void setComments(List<Comment> comments) {
+//        this.comments = comments;
+//    }
 
     public User getUser() {
         return user;

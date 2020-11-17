@@ -7,6 +7,7 @@ import se.kth.sda.skeleton.post.Post;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import java.util.List;
 
 @Entity
 @Table(name="account")
@@ -40,12 +41,10 @@ public class User {
     }
 
     @OneToMany (cascade = CascadeType.ALL)
-    Post post;
+    List<Post> posts;
 
     @OneToMany (cascade = CascadeType.ALL)
-    public Comment comment;
-
-
+    List<Comment> comments;
 
 
     public Long getId() {
@@ -79,4 +78,5 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
+
 }
