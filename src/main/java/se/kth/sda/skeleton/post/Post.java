@@ -1,5 +1,6 @@
 package se.kth.sda.skeleton.post;
 
+import se.kth.sda.skeleton.comments.Comment;
 import se.kth.sda.skeleton.user.User;
 
 import javax.persistence.*;
@@ -18,8 +19,10 @@ public class Post {
     @ManyToOne
     private User poster;
 
-//    @OneToMany
-//    private List<Comment> comments;
+
+    //one post with many comments (save a post and all comments)
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Comment> comments;
 
     public Post() {
     }
@@ -45,12 +48,20 @@ public class Post {
         this.postBody = postBody;
     }
 
-//    public List<Comment> getComments() {
-//        return comments;
-//    }
-//
-//    public void setComments(List<Comment> comments) {
-//        this.comments = comments;
-//    }
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
+    public User getPoster() {
+        return poster;
+    }
+
+    public void setPoster(User poster) {
+        this.poster = poster;
+    }
 
 }

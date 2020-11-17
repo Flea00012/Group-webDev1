@@ -1,6 +1,8 @@
 package se.kth.sda.skeleton.user;
 
 import org.hibernate.validator.constraints.Length;
+import se.kth.sda.skeleton.comments.Comment;
+import se.kth.sda.skeleton.post.Post;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -36,6 +38,13 @@ public class User {
         this.password = password;
         this.name = name;
     }
+
+    @OneToMany (cascade = CascadeType.ALL)
+    Post post;
+
+    @OneToMany (cascade = CascadeType.ALL)
+    public Comment comment;
+
 
 
 

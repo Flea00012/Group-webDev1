@@ -1,6 +1,7 @@
 package se.kth.sda.skeleton.comments;
 
 import se.kth.sda.skeleton.post.Post;
+import se.kth.sda.skeleton.user.User;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -23,11 +24,23 @@ public class Comment {
     @Column(columnDefinition = "TEXT")
     private Date date;
 
-    // One post can have multiple entities
+    // Many comments for a single post (save a comment and you
     @ManyToOne
-    Post post;
+    private Post post;
 
-    public Comment() {}
+    //many comments from a single user
+    @ManyToOne
+    private User commenter;
+
+    public Comment() {
+
+    }
+
+    public Comment(Long id, String body, Date date) {
+        this.id = id;
+        this.body = body;
+        this.date = date;
+    }
 
     public Comment(Long id, String body) {
         this.id = id;
@@ -65,5 +78,13 @@ public class Comment {
 
     public void setPost(Post post) {
         this.post = post;
+    }
+
+    public User getCommenter() {
+        return commenter;
+    }
+
+    public void setCommenter(User commenter) {
+        this.commenter = commenter;
     }
 }
