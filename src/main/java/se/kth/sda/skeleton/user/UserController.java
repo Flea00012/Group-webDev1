@@ -1,4 +1,4 @@
-package se.kth.sda.skeleton.user;
+/*package se.kth.sda.skeleton.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +13,6 @@ public class UserController {
     @Autowired
     UserService userService;
 
-
     @GetMapping("")
     public User findUserByEmail(String email) {
         return userService.findUserByEmail(email);
@@ -23,4 +22,4 @@ public class UserController {
     public void registrationProcess(User user) {
          userService.register(user);
     }
-}
+}*/
