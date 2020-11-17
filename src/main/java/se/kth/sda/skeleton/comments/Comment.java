@@ -30,7 +30,7 @@ public class Comment {
 
     //many comments from a single user
     @ManyToOne
-    private User commenter;
+    private User user;
 
     public Comment() {
 
@@ -80,11 +80,11 @@ public class Comment {
         this.post = post;
     }
 
-    public User getCommenter() {
-        return commenter;
+    public User getUser() {
+        return user;
     }
 
-    public void setCommenter(User commenter) {
-        this.commenter = commenter;
+    public void setUser(User user) {
+        this.user = user;
     }
 }
