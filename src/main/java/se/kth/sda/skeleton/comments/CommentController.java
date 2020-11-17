@@ -27,7 +27,7 @@ public class CommentController {
      */
     @GetMapping("")
     public List<Comment> getAll(@RequestParam(required = false) Long postId) {
-        if (postId.equals(null)) {
+        if (postId == null) {
             return commentService.getAll();
         } else {
             return commentService.getAllByPostId(postId);
