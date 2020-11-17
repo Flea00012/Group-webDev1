@@ -56,12 +56,12 @@ public class Post {
         this.comments = comments;
     }
 
-    public User getPoster() {
-        return poster;
+    public User getUser() {
+        return user;
     }
 
-    public void setPoster(User poster) {
-        this.poster = poster;
+    public void setUser(User user) {
+        this.user = user;
     }
 
 }
