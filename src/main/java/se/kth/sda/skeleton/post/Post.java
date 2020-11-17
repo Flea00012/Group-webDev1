@@ -13,10 +13,10 @@ public class Post {
     private Long id;
 
     @Column(columnDefinition = "TEXT")
-    private String postBody;
+    private String body;
 
     @ManyToOne
-    private User poster;
+    private User user;
 
 //    @OneToMany
 //    private List<Comment> comments;
@@ -24,9 +24,9 @@ public class Post {
     public Post() {
     }
 
-    public Post(Long id, String postBody) {
+    public Post(Long id, String body) {
         this.id = id;
-        this.postBody = postBody;
+        this.body = body;
     }
 
     public Long getId() {
@@ -37,12 +37,12 @@ public class Post {
         this.id = id;
     }
 
-    public String getPostBody() {
-        return postBody;
+    public String getBody() {
+        return body;
     }
 
-    public void setPostBody(String postBody) {
-        this.postBody = postBody;
+    public void setBody(String body) {
+        this.body = body;
     }
 
 //    public List<Comment> getComments() {
