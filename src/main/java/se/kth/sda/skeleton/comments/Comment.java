@@ -28,8 +28,18 @@ public class Comment {
 
     public Comment() {}
 
+    public Comment(Long id, String body, Date date) {
+        this.id = id;
+        this.body = body;
+        this.date = date;
+    }
+
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getBody() {
