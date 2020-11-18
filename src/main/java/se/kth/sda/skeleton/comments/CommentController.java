@@ -71,6 +71,7 @@ public class CommentController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         //this one should be implemented based on dependency with user entity
+        commentService.delete(id);
     }
 
 }
