@@ -24,7 +24,7 @@ function App() {
       <div className="container mt-5">
         <Switch>
           <Route path="/posts">
-            <FoodPost />
+            <PostsPage />
           </Route>
 
           <Route path="/chat">

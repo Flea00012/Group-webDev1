@@ -10,8 +10,9 @@ import Navbar from './components/layout/Navbar';
 // Import pages
 import LoginPage from './components/auth/LoginPage';
 import HomePage from './components/home/HomePage';
-import FoodPost from './components/posts/FoodPost.jsx';
+import PostsPage from './components/posts/PostsPage';
 import ChatPage from './components/chat/ChatPage';
+import yellowPosts from './components/posts/FoodPost';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
@@ -24,7 +25,7 @@ function App() {
       <div className="container mt-5">
         <Switch>
           <Route path="/posts">
-            <FoodPost />
+            <PostsPage />
           </Route>
 
           <Route path="/chat">
