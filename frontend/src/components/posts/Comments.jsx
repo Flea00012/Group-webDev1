@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react';
 //styles
 import '../../CSS/styles.css';
 
-export default function Post({ onSubmit }) {
+export default function Comment({ onSubmit }) {
   const [comment, setComment] = useState('');
   const userComment = useRef();
 

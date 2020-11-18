@@ -8,7 +8,7 @@ import '../../CSS/styles.css';
 import Post from './Post';
 import Comment from './Comments';
 
-export default function Front() {
+export default function FoodPost() {
   return (
     <div className="wrapper">
       <header className="main-head">Header for Food Forum site</header>
