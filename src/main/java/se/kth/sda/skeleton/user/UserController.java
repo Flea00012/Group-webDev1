@@ -1,10 +1,8 @@
-/*package se.kth.sda.skeleton.user;
+package se.kth.sda.skeleton.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import se.kth.sda.skeleton.auth.AuthService;
 
 @RestController
 @RequestMapping("/user")
@@ -13,13 +11,17 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @GetMapping("")
-    public User findUserByEmail(String email) {
+    @Autowired
+    AuthService authService;
+
+    @GetMapping("/me")
+    public User findUserByEmail() {
+        String email = authService.getLoggedInUserEmail();
         return userService.findUserByEmail(email);
     }
 
-    @PostMapping("/register")
-    public void registrationProcess(User user) {
-         userService.register(user);
-    }
-}*/
+//    @PostMapping("/register")
+//    public void registrationProcess(User user) {
+//         userService.register(user);
+//    }
+}

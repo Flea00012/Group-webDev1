@@ -9,9 +9,20 @@ import Api from "../../api/Api";
 
 import PostForm from "./Posts/PostForm";
 import Post from "./Posts/Post";
+import CommentCreateForm from "./Comments/CommentCreateForm";
+import CommentCard from "./Comments/CommentCard";
 
 export default function PostsPage() {
   const [comments, setComments] = useState([]);
+  const [user, setUser] = useState([]);
+
+  useEffect(
+    () =>
+      Api.get("/user/me").then((res) => {
+        setUser(res.data);
+      }),
+    []
+  );
 
   const createComment = (commentData) => {
     Api.post("/comments", commentData).then((res) =>
@@ -32,21 +43,24 @@ export default function PostsPage() {
   };
 
   const deleteComment = (comment) => {
-    console.log(comment);
-    Api.delete("/comments/" + comment.id).then((r) => getAll());
+    if (comment.user.email === user.email) {
+      Api.delete("/comments/" + comment.id).then((r) => getAll());
+    } else {
+      console.log("Only user who created the comment can delete it");
+    }
   };
 
   return (
     <div className="wrapper">
       <header className="main-head">Header for Food Forum site</header>
       <>
-        <PostForm />
-        <Post onCreateClick={createComment} />
+        {/* <PostForm />
+        <Post onCreateClick={createComment} /> */}
 
         {/* The code below can be used for integrating comments in Post component. 
       Please mind the props needed by CommentCard and CommentForm components */}
-
-        {/* <CommentForm onCreateClick={createComment} />
+        {/* 
+        <CommentCreateForm onCreateClick={createComment} user={user} />
         <div>
           {comments.map((comment) => (
             <CommentCard
