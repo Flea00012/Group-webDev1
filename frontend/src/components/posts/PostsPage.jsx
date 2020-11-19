@@ -17,17 +17,14 @@ export default function PostsPage() {
     []
   );
 
-
   return (
     <div className="wrapper">
       <header className="main-head">Header for Food Forum site</header>
       <>
-        <Posts />
+        <Posts user={user} />
 
         {/* The code below can be used for integrating comments in Post component. 
       Please mind the props needed by CommentCard and CommentForm components */}
-
-        <Comments user={user} />
       </>
       <aside className="side">Sidebar Topics related to other foods</aside>
       <div className="ad">Advertising and External APIs</div>

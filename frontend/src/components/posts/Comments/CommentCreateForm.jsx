@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function CommentForm({ onCreateClick, user }) {
+export default function CommentCreateForm({ onCreateClick, user }) {
   const [comment, setComment] = useState("");
 
   return (
