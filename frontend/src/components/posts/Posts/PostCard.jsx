@@ -23,6 +23,7 @@ export default function PostCard({ post, onDeleteClick, onUpdateClick, user }) {
       <div className="card-body">
         <p>{post.body}</p>
         <span>{post.user.name}</span>
+        <span>{post.date}</span> 
         <div>
           <button
             className="btn btn-danger"
