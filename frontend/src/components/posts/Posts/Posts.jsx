@@ -5,6 +5,7 @@ import PostCreateForm from "./PostCreateForm";
 
 export default function Posts({ user }) {
   const [posts, setPosts] = useState([]);
+  
 
   const createPost = (postData) => {
     api

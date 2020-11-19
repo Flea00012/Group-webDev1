@@ -16,6 +16,11 @@ public class Post {
     @Column(columnDefinition = "TEXT")
     private String body;
 
+    @Column(columnDefinition = "TEXT")
+    private String date;
+
+
+
     @ManyToOne
     private User user;
 
@@ -26,9 +31,10 @@ public class Post {
     public Post() {
     }
 
-    public Post(Long id, String body) {
+    public Post(Long id, String body, String date) {
         this.id = id;
         this.body = body;
+        this.date = date;
     }
 
     public Long getId() {
@@ -45,6 +51,15 @@ public class Post {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public String getDate() {
+
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public User getUser() {

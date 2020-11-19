@@ -4,7 +4,7 @@ import se.kth.sda.skeleton.post.Post;
 import se.kth.sda.skeleton.user.User;
 
 import javax.persistence.*;
-import java.util.Date;
+
 
 /**
  * This class is responsible for shaping comment as entity.
@@ -22,7 +22,7 @@ public class Comment {
 
 
     @Column(columnDefinition = "TEXT")
-    private Date date;
+    private String date;
 
     // Many comments for a single post (save a comment and you
     @ManyToOne
@@ -36,7 +36,7 @@ public class Comment {
 
     }
 
-    public Comment(Long id, String body, Date date) {
+    public Comment(Long id, String body, String date) {
         this.id = id;
         this.body = body;
         this.date = date;
@@ -45,7 +45,6 @@ public class Comment {
     public Comment(Long id, String body) {
         this.id = id;
         this.body = body;
-        this.date = new Date();
     }
 
     public Long getId() {
@@ -64,11 +63,11 @@ public class Comment {
         this.body = body;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

@@ -6,7 +6,7 @@ import Api from "../../../api/Api";
 import CommentCreateForm from "./CommentCreateForm";
 import CommentCard from "./CommentCard";
 
-export default function Comments({ post, user }) {
+export default function Comments({ post, user}) {
   const [comments, setComments] = useState([]);
 
   const createComment = (commentData) => {

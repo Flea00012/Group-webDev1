@@ -21,7 +21,7 @@ export default function CommentCard({ comment, onDeleteClick, onUpdateClick }) {
       <div className="comment">
         <p>{comment.body}</p>
         <span>{comment.user.name}</span>
-        {/* <span>{comment.date}</span> */}
+        <span>{comment.date}</span> 
       </div>
       <button onClick={handleUpdateClick}>edit</button>
       <button onClick={() => onDeleteClick(comment)}>Delete</button>
