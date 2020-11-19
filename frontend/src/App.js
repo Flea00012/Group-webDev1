@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Import custom styles for our application
-import './App.css';
+import "./App.css";
 
-import Auth from './services/Auth';
-import Navbar from './components/layout/Navbar';
+import Auth from "./services/Auth";
+import Navbar from "./components/layout/Navbar";
 
 // Import pages
-import LoginPage from './components/auth/LoginPage';
-import HomePage from './components/home/HomePage';
-import FoodPost from './components/posts/FoodPost.jsx';
-import ChatPage from './components/chat/ChatPage';
+import LoginPage from "./components/auth/LoginPage";
+import HomePage from "./components/home/HomePage";
+import ChatPage from "./components/chat/ChatPage";
+import PostsPage from "./components/posts/PostsPage";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(Auth.isLoggedIn());
@@ -23,7 +23,7 @@ function App() {
 
       <div className="container mt-5">
         <Switch>
-          <Route path="/posts">
+          {/* <Route path="/posts">
             <FoodPost />
           </Route>
 
@@ -33,6 +33,10 @@ function App() {
 
           <Route path="/">
             <HomePage />
+          </Route> */}
+
+          <Route path="/postpage">
+            <PostsPage />
           </Route>
         </Switch>
       </div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function CommentForm({ onCreateClick }) {
+export default function CommentForm({ onCreateClick, user }) {
   const [comment, setComment] = useState("");
 
   return (
@@ -16,7 +16,7 @@ export default function CommentForm({ onCreateClick }) {
         <button
           className="button"
           onClick={() => {
-            onCreateClick({ body: comment }); //add a timestamp here
+            onCreateClick({ body: comment, user: user }); //add a timestamp here
           }}
         >
           Comment

@@ -1,11 +1,11 @@
 //react core
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef } from "react";
 
 //styles
-import '../../CSS/styles.css';
+// import '../../CSS/styles.css';
 
 export default function Post({ onSubmit }) {
-  const [post, setPost] = useState('');
+  const [post, setPost] = useState("");
   const userPost = useRef();
 
   return (
