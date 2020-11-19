@@ -66,6 +66,7 @@ public class CommentService {
      */
     public void delete(Long id) {
         //this one should be implemented based on dependency with user entity
+        repository.deleteById(id);
     }
 
 
