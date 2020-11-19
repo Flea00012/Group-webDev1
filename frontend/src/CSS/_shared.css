@@ -1,6 +1,42 @@
-* {
+body,
+body > * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(236, 194, 115);
+}
+
+.container {
+  min-height: 100vh;
+  background-color: rgb(236, 194, 115);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h2,
+span,
+p {
+  margin: 0;
+}
+
+#root {
+  height: 100%;
+  display: grid;
+  grid-row-gap: 3vh;
+  justify-items: center;
+}
+
+/* * {
   background-color: #fcd404;
- 
 }
 
 p {
@@ -12,83 +48,69 @@ input {
 }
 
 .main-head {
-    grid-area: header;
-    background-color: white;
-  }
-  .content {
-    grid-area: content;
-    background-color:  white;
-   
-  }
-  
-  .side {
-    grid-area: sidebar;
-    background-color:  white;
-  }
-  .ad {
-    grid-area: ad;
-    background-color:  white;
-  }
-  .main-footer {
-    grid-area: footer;
-    background-color: white;
-  }
+  grid-area: header;
+  background-color: white;
+}
+.content {
+  grid-area: content;
+  background-color: white;
+}
 
-  .button{
-    
-      height:60px;
-      width:80px;
-      align-items: center;
-      background-color: orange;
-  
-  }
+.side {
+  grid-area: sidebar;
+  background-color: white;
+}
+.ad {
+  grid-area: ad;
+  background-color: white;
+}
+.main-footer {
+  grid-area: footer;
+  background-color: white;
+}
 
+.button {
+  height: 60px;
+  width: 80px;
+  align-items: center;
+  background-color: orange;
+}
 
+.wrapper {
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "header"
+    "content"
+    "sidebar"
+    "ad"
+    "footer";
+}
+
+@media (min-width: 400px) {
   .wrapper {
-    display: grid;
-    gap: 20px;
-    grid-template-areas: 
-      "header"
-      "content"
-      "sidebar"
-      "ad"
-      "footer";
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+      "sidebar  header"
+      "sidebar content"
+      "ad content"
+      "footer footer";
   }
 
-  @media (min-width: 400px) {
-    .wrapper {
-      grid-template-columns: 1fr 3fr;
-      grid-template-areas: 
-        "sidebar  header"
-        "sidebar content"
-        "ad content"
-        "footer footer";
-
-      
-    }
-
-    *{
-      font-size: medium;
-    }
-   
+  * {
+    font-size: medium;
   }
+}
 
-
-
-  @media (min-width: 750px) {
-    .wrapper {
-      grid-template-columns: 1fr 3fr;
-      grid-template-areas: 
-        "header  header"
-        "sidebar content"
-        "ad      footer";
-
-        
-    }
-    *{
-      font-size: large;
-    }
-  
+@media (min-width: 750px) {
+  .wrapper {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+      "header  header"
+      "sidebar content"
+      "ad      footer";
   }
-
-
+  * {
+    font-size: large;
+  }
+} */

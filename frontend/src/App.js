@@ -9,8 +9,6 @@ import Navbar from "./components/layout/Navbar";
 
 // Import pages
 import LoginPage from "./components/auth/LoginPage";
-import HomePage from "./components/home/HomePage";
-import ChatPage from "./components/chat/ChatPage";
 import PostsPage from "./components/posts/PostsPage";
 
 function App() {
@@ -21,21 +19,9 @@ function App() {
     <Router>
       <Navbar onLogout={() => Auth.logout()} />
 
-      <div className="container mt-5">
+      <div className="container">
         <Switch>
-          {/* <Route path="/posts">
-            <FoodPost />
-          </Route>
-
-          <Route path="/chat">
-            <ChatPage />
-          </Route>
-
-          <Route path="/">
-            <HomePage />
-          </Route> */}
-
-          <Route path="/postpage">
+          <Route path="/forum">
             <PostsPage />
           </Route>
         </Switch>
