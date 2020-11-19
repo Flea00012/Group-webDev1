@@ -11,19 +11,8 @@ export default function AdBox() {
     async function fetchData() {
       try {
         setStatus(0);
-        const endpoint =
-          'https://yelpapiserg-osipchukv1.p.rapidapi.com/getAutocomplete';
-        const response = await fetch(endpoint, {
-          method: 'POST',
-          headers: {
-            'x-rapidapi-host': 'YelpAPIserg-osipchukV1.p.rapidapi.com',
-            'x-rapidapi-key':
-              'd70c9e5e82msh35a12910172eee3p17ef1ajsn98efe6dbc62a',
-            'content-type': 'application/x-www-form-urlencoded',
-          },
-          body: {},
-        });
-
+        const endpoint = 'https://cat-fact.herokuapp.com';
+        const response = await fetch(endpoint);
 
         // Once the information is downloaded we transformed it to json
         const data = await response.json();
@@ -31,11 +20,13 @@ export default function AdBox() {
         // const displayData = data.filter((value) => value.title === );
 
         console.log(`data : ${data}`);
+        data.map((res) => console.log(res.facts));
 
         setInformation(data);
         setStatus(1);
-      } catch {
+      } catch (err) {
         setStatus(2);
+        throw err;
       }
 
       // here use the comparator to get the specific package id
