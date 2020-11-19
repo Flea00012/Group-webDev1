@@ -24,20 +24,28 @@ export default function Comments({ post, user }) {
   }, []);
 
   const updateComment = (updatedComment) => {
-    Api.put("/comments/", updatedComment).then((r) => getAllByPost());
+    if (updatedComment.user.email === user.email) {
+      Api.put("/comments/", updatedComment).then((r) => getAllByPost());
+    } else {
+      window.alert("Only the user who created the comment can edit it");
+    }
   };
 
   const deleteComment = (comment) => {
     if (comment.user.email === user.email) {
       Api.delete("/comments/" + comment.id).then((r) => getAllByPost());
     } else {
-      console.log("Only user who created the comment can delete it");
+      window.alert("Only the user who created the comment can delete it");
     }
   };
 
   return (
     <>
-      <CommentCreateForm onCreateClick={createComment} user={user} />
+      <CommentCreateForm
+        onCreateClick={createComment}
+        user={user}
+        post={post}
+      />
       <div>
         {comments.map((comment) => (
           <CommentCard
