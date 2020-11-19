@@ -2,6 +2,7 @@ import React from "react";
 import Auth from "../../services/Auth";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
+import logo from "../../assets/logo.png";
 
 function LoginPage() {
   const login = async (loginData) => {
@@ -19,25 +20,19 @@ function LoginPage() {
   };
 
   return (
-    <div className="wrapper">
-      <div className="container">
-        <div className="row mt-4">
-          <div className="col-md-6 " style={{ color: "white" }}>
-            <h1>SDA</h1>
-            <p>Starter template</p>
-          </div>
+    <div className="container">
+      <div className="login-header">
+        <img className="logo" src={logo} alt="Blue logo with words FoodFeed" />
+        <h1>Good Food - Good Mood!</h1>
+      </div>
 
-          <div className="col-md-6">
-            <div className="row">
-              <div className="col-12  strong-shadow">
-                <LoginForm onSubmit={login} />
-              </div>
+      <div className="forms">
+        <div className="login-form">
+          <LoginForm onSubmit={login} />
+        </div>
 
-              <div className="col-12 mt-4">
-                <RegisterForm onSubmit={register} />
-              </div>
-            </div>
-          </div>
+        <div className="register-form">
+          <RegisterForm onSubmit={register} />
         </div>
       </div>
     </div>

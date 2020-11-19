@@ -19,12 +19,18 @@ export default function CommentCard({ comment, onDeleteClick, onUpdateClick }) {
   ) : (
     <div className="comment">
       <div className="comment">
-        <p>{comment.body}</p>
-        <span>{comment.user.name}</span>
-        <span>{comment.date}</span> 
+        <div className="signature">
+          <span className="user-name-comment">{comment.user.name}</span>
+          <span className="timestamp">{comment.date}</span>
+        </div>
+        <p className="comment-text text">{comment.body}</p>
       </div>
-      <button onClick={handleUpdateClick}>edit</button>
-      <button onClick={() => onDeleteClick(comment)}>Delete</button>
+      <button className="btn btn-warning" onClick={handleUpdateClick}>
+        <i className="far fa-edit"></i>
+      </button>
+      <button className="btn btn-danger" onClick={() => onDeleteClick(comment)}>
+        <i className="far fa-trash-alt"></i>
+      </button>
     </div>
   );
 }

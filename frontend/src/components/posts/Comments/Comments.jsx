@@ -6,7 +6,7 @@ import Api from "../../../api/Api";
 import CommentCreateForm from "./CommentCreateForm";
 import CommentCard from "./CommentCard";
 
-export default function Comments({ post, user}) {
+export default function Comments({ post, user }) {
   const [comments, setComments] = useState([]);
 
   const createComment = (commentData) => {
@@ -40,13 +40,9 @@ export default function Comments({ post, user}) {
   };
 
   return (
-    <>
-      <CommentCreateForm
-        onCreateClick={createComment}
-        user={user}
-        post={post}
-      />
+    <div className="comments">
       <div>
+        <h2>Comments</h2>
         {comments.map((comment) => (
           <CommentCard
             key={comment.id}
@@ -56,6 +52,11 @@ export default function Comments({ post, user}) {
           />
         ))}
       </div>
-    </>
+      <CommentCreateForm
+        onCreateClick={createComment}
+        user={user}
+        post={post}
+      />
+    </div>
   );
 }
