@@ -7,6 +7,7 @@ export default function CommentCard({ comment, onDeleteClick, onUpdateClick }) {
   const handleUpdateClick = () => {
     setIsUpdating(true);
   };
+  
 
   return isUpdating ? (
     <CommentUpdateForm
@@ -24,7 +25,10 @@ export default function CommentCard({ comment, onDeleteClick, onUpdateClick }) {
         <span>{comment.date}</span> */}
       </div>
       <button onClick={handleUpdateClick}>edit</button>
-      <button onClick={() => onDeleteClick(comment)}>Delete</button>
+      <button onClick={() => {
+        if (window.confirm("Delete the item?")) {
+          onDeleteClick(comment)}
+        }}>Delete</button>
     </div>
   );
 }

@@ -7,8 +7,6 @@ import Api from "../../api/Api";
 
 // import Components
 
-import PostForm from "./Posts/PostForm";
-import Post from "./Posts/Post";
 import CommentCreateForm from "./Comments/CommentCreateForm";
 import CommentCard from "./Comments/CommentCard";
 
@@ -30,8 +28,16 @@ export default function PostsPage() {
     );
   };
 
+  
+
   const getAll = () => {
-    Api.get("/comments").then((res) => setComments(res.data));
+   
+    Api.get("/comments")
+    .then((res) => {
+      const sortData= res.data.sort((a, b) => b.id - a.id)
+      setComments(sortData);
+      });
+      
   };
 
   useEffect(() => {
