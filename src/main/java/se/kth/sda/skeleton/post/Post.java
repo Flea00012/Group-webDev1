@@ -20,7 +20,7 @@ public class Post {
     private User user;
 
     //one post with many comments (save a post and all comments)
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     private List<Comment> comments;
 
     public Post() {
@@ -46,14 +46,6 @@ public class Post {
     public void setBody(String body) {
         this.body = body;
     }
-
-//    public List<Comment> getComments() {
-//        return comments;
-//    }
-//
-//    public void setComments(List<Comment> comments) {
-//        this.comments = comments;
-//    }
 
     public User getUser() {
         return user;
