@@ -6,9 +6,7 @@ import Api from "../../api/Api";
 // import "../../CSS/styles.css";
 
 // import Components
-
-import PostForm from "./Posts/PostForm";
-import Post from "./Posts/Post";
+import Posts from "./Posts/Posts";
 import CommentCreateForm from "./Comments/CommentCreateForm";
 import CommentCard from "./Comments/CommentCard";
 
@@ -54,6 +52,7 @@ export default function PostsPage() {
     <div className="wrapper">
       <header className="main-head">Header for Food Forum site</header>
       <>
+        <Posts />
         {/* <PostForm />
         <Post onCreateClick={createComment} /> */}
 
