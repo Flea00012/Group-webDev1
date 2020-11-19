@@ -1,25 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
+import CommentUpdateForm from "./CommentUpdateForm";
 
 export default function CommentCard({ comment, onDeleteClick, onUpdateClick }) {
-  //this is still to be fixed, see comment inside the function
-  function toggleUpdateForm() {
-    // toggle the style of update-form class
-    //it will show or hide the update form
-  }
+  const [isUpdating, setIsUpdating] = useState(false);
 
-  return (
+  const handleUpdateClick = () => {
+    setIsUpdating(true);
+  };
+
+  return isUpdating ? (
+    <CommentUpdateForm
+      oldComment={comment}
+      onUpdateClick={(updatedComment) => {
+        setIsUpdating(false);
+        onUpdateClick(updatedComment);
+      }}
+    />
+  ) : (
     <div className="comment">
       <div className="comment">
         <p>{comment.body}</p>
         {/* <p>{comment.user.name}</p>
         <span>{comment.date}</span> */}
       </div>
-      {/* <button onClick={toggleUpdateForm}>Edit</button> */}
-      <button
-        onClick={() => onUpdateClick({ ...comment, body: "updated comment" })}
-      >
-        edit
-      </button>
+      <button onClick={handleUpdateClick}>edit</button>
       <button onClick={() => onDeleteClick(comment)}>Delete</button>
     </div>
   );

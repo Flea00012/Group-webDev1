@@ -4,12 +4,12 @@ function CommentUpdateForm({ oldComment, onUpdateClick }) {
   const [body, setBody] = useState(oldComment.body);
 
   return (
-    <div className="update-form">
+    <div className="updating">
       <div className="card-body">
-        <div class="input-group">
+        <div className="input-group">
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             placeholder="Edit comment"
             value={body}
             onChange={(e) => setBody(e.target.value)}

@@ -59,7 +59,7 @@ export default function PostsPage() {
 
         {/* The code below can be used for integrating comments in Post component. 
       Please mind the props needed by CommentCard and CommentForm components */}
-        {/* 
+
         <CommentCreateForm onCreateClick={createComment} user={user} />
         <div>
           {comments.map((comment) => (
@@ -70,7 +70,7 @@ export default function PostsPage() {
               onDeleteClick={deleteComment}
             />
           ))}
-        </div> */}
+        </div>
       </>
       <aside className="side">Sidebar Topics related to other foods</aside>
       <div className="ad">Advertising and External APIs</div>
