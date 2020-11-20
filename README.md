@@ -1,6 +1,6 @@
 # Food Forum
 
-A delivery app for user Jhon Doe to search for his packages that are to be delivered
+FoodFeed is a forum for food lovers who want to exchange their ideas!
 
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
