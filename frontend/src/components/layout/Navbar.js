@@ -9,9 +9,8 @@ function Navbar({ onLogout }) {
         <img className="logo" src={logo} alt="Blue logo with words FoodFeed" />
       </a>
 
-      
-
-      <button className="btn btn-light logout" onClick={onLogout}>
+      <h1>Good Food - Good Mood!</h1>
+      <button className="btn btn-dark logout" onClick={onLogout}>
         Logout
       </button>
     </nav>

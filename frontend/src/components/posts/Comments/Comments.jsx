@@ -35,7 +35,10 @@ export default function Comments({ post, user }) {
   };
 
   const deleteComment = (comment) => {
-    if (comment.user.email === user.email) {
+    if (
+      comment.user.email === user.email &&
+      window.confirm("Delete the item?")
+    ) {
       Api.delete("/comments/" + comment.id).then((r) => getAllByPost());
     } else {
       window.alert("Only the user who created the comment can delete it");

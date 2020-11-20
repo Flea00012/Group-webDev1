@@ -31,9 +31,7 @@ export default function CommentCard({ comment, onDeleteClick, onUpdateClick }) {
       <button
         className="btn btn-danger"
         onClick={() => {
-          if (window.confirm("Delete the item?")) {
-            onDeleteClick(comment);
-          }
+          onDeleteClick(comment);
         }}
       >
         <i className="far fa-trash-alt"></i>
