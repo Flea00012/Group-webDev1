@@ -15,16 +15,16 @@ export default function Comments({ post, user }) {
     );
   };
 
+  //retrieves comments for the post passed as props
   const getAllByPost = () => {
     Api.get(`/comments?postId=${post.id}`).then((res) => {
-      const sortedData = res.data.sort((a, b) => b.id - a.id);
-      setComments(sortedData);
+      setComments(res.data);
     });
   };
 
   useEffect(() => {
     getAllByPost();
-  }, []);
+  }, [post]);
 
   const updateComment = (updatedComment) => {
     if (updatedComment.user.email === user.email) {
@@ -35,11 +35,10 @@ export default function Comments({ post, user }) {
   };
 
   const deleteComment = (comment) => {
-    if (
-      comment.user.email === user.email &&
-      window.confirm("Delete the item?")
-    ) {
-      Api.delete("/comments/" + comment.id).then((r) => getAllByPost());
+    if (comment.user.email === user.email) {
+      if (window.confirm("Delete the item?")) {
+        Api.delete("/comments/" + comment.id).then((r) => getAllByPost());
+      }
     } else {
       window.alert("Only the user who created the comment can delete it");
     }

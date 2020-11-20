@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CommentUpdateForm from "./CommentUpdateForm";
 
 export default function CommentCard({ comment, onDeleteClick, onUpdateClick }) {
+  //depending on whether user has clicked update button or not the state will change
   const [isUpdating, setIsUpdating] = useState(false);
 
   const handleUpdateClick = () => {

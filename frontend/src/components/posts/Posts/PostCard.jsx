@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import PostUpdateForm from "./PostUpdateForm";
-import CommentCreateForm from "../Comments/CommentCreateForm";
 import Comments from "../Comments/Comments";
 
 export default function PostCard({ post, onDeleteClick, onUpdateClick, user }) {

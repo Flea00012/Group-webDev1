@@ -7,14 +7,14 @@ export default function Posts({ user }) {
   const [posts, setPosts] = useState([]);
 
   const createPost = (postData) => {
-    api
-      .createPost(postData)
-      //Api.post("/products", productData)
-      .then((res) => setPosts([...posts, res.data]));
+    api.createPost(postData).then((res) => setPosts([...posts, res.data]));
   };
 
   const getAll = () => {
-    api.getAllPosts().then((res) => setPosts(res.data));
+    api.getAllPosts().then((res) => {
+      const sortedData = res.data.sort((a, b) => b.id - a.id);
+      setPosts(sortedData);
+    });
   };
 
   const updatePost = (updatedPost) => {
@@ -26,8 +26,10 @@ export default function Posts({ user }) {
   };
 
   const deletePost = (post) => {
-    if (post.user.email === user.email && window.confirm("Delete the item?")) {
-      api.deletePost(post.id).then((r) => getAll());
+    if (post.user.email === user.email) {
+      if (window.confirm("Delete the item?")) {
+        api.deletePost(post.id).then((r) => getAll());
+      }
     } else {
       window.alert("Only the user who created the post can delete it");
     }

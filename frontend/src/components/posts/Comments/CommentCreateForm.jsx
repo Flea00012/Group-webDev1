@@ -4,6 +4,8 @@ export default function CommentCreateForm({ onCreateClick, user, post }) {
   const [comment, setComment] = useState("");
   var date = new Date();
   var timestamp = date.getTime();
+
+  //a timestamp for comments
   const sortTime = new Intl.DateTimeFormat("en-US", {
     year: "numeric",
     month: "2-digit",
