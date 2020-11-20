@@ -5,7 +5,7 @@ A delivery app for user Jhon Doe to search for his packages that are to be deliv
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![made-with-reactJS](https://img.shields.io/badge/Made%20with-ReactJS-1f425f.svg)](https://www.java.com/en/)
-[![made-with-JavaSpring](https://img.shields.io/badge/Made%20with-Java Spring-1f425f.svg)](https://www.java.com/en/)
+[![made-with-JavaSpring](https://img.shields.io/badge/Made%20with-Java-Spring-1f425f.svg)](https://www.java.com/en/)
 
 ## Brief Summary
 
@@ -20,11 +20,11 @@ The member who makes the post can delete it and update it. The member who makes 
 
 The login page for a user is shown below. This is also the registration page for the users. Email, password and name are required upon initial signup. 
 
-
+![alt text](https://github.com/Flea00012/Group-webDev1/blob/main/frontend/public/Screenshot%202020-11-20%20at%2011.13.05.png)
 
 When sign up is complete the user can navigate to the Forum page and start viewing other posts. The user can then start commenting on other posts and also author posts as desired. For the purpose of keeping to a specific area of content, it is recommended to keep posts and comments focused on the topic of food or related content.
 
-
+![alt text](https://github.com/Flea00012/Group-webDev1/blob/main/frontend/public/post.png)
 
 ## Class Diagram
 
@@ -37,8 +37,6 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## License
 
 MIT license applied to this project. Please view the link for further details.
-
-![alt text](https://github.com/Flea00012/JavaLoggable/blob/master/LICENSE)
 
 ## Disclaimer
 
