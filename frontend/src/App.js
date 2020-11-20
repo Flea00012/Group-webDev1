@@ -21,7 +21,7 @@ function App() {
 
       <div className="container">
         <Switch>
-          <Route path="/forum">
+          <Route path="/">
             <PostsPage />
           </Route>
         </Switch>

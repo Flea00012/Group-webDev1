@@ -21,9 +21,6 @@ export default function PostsPage() {
   return (
     <div className="main">
       <Posts user={user} />
-      <div className="ad">
-        <span>Advertising and External APIs</span>
-      </div>
     </div>
   );
 }
