@@ -28,7 +28,14 @@ export default function CommentCard({ comment, onDeleteClick, onUpdateClick }) {
       <button className="btn btn-warning" onClick={handleUpdateClick}>
         <i className="far fa-edit"></i>
       </button>
-      <button className="btn btn-danger" onClick={() => onDeleteClick(comment)}>
+      <button
+        className="btn btn-danger"
+        onClick={() => {
+          if (window.confirm("Delete the item?")) {
+            onDeleteClick(comment);
+          }
+        }}
+      >
         <i className="far fa-trash-alt"></i>
       </button>
     </div>

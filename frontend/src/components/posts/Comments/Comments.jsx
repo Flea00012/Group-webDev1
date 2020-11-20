@@ -16,7 +16,10 @@ export default function Comments({ post, user }) {
   };
 
   const getAllByPost = () => {
-    Api.get(`/comments?postId=${post.id}`).then((res) => setComments(res.data));
+    Api.get(`/comments?postId=${post.id}`).then((res) => {
+      const sortedData = res.data.sort((a, b) => b.id - a.id);
+      setComments(sortedData);
+    });
   };
 
   useEffect(() => {
