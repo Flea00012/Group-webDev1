@@ -5,7 +5,6 @@ import PostCreateForm from "./PostCreateForm";
 
 export default function Posts({ user }) {
   const [posts, setPosts] = useState([]);
-  
 
   const createPost = (postData) => {
     api
@@ -15,29 +14,20 @@ export default function Posts({ user }) {
   };
 
   const getAll = () => {
-    api
-      .getAllPosts()
-      //Api.get("/products")
-      .then((res) => setPosts(res.data));
+    api.getAllPosts().then((res) => setPosts(res.data));
   };
 
   const updatePost = (updatedPost) => {
     if (updatedPost.user.email === user.email) {
-      api
-        .updatePost(updatedPost)
-        //Api.put("/products/", updatedProduct)
-        .then((r) => getAll());
+      api.updatePost(updatedPost).then((r) => getAll());
     } else {
       window.alert("Only the user who created the post can edit it");
     }
   };
 
   const deletePost = (post) => {
-    if (post.user.email === user.email) {
-      api
-        .deletePost(post.id)
-        //Api.delete("/products/" + product.id)
-        .then((r) => getAll());
+    if (post.user.email === user.email && window.confirm("Delete the item?")) {
+      api.deletePost(post.id).then((r) => getAll());
     } else {
       window.alert("Only the user who created the post can delete it");
     }

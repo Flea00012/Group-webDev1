@@ -33,7 +33,12 @@ export default function PostCard({ post, onDeleteClick, onUpdateClick, user }) {
           <i className="far fa-edit"></i>
         </button>
 
-        <button className="btn btn-danger" onClick={() => onDeleteClick(post)}>
+        <button
+          className="btn btn-danger"
+          onClick={() => {
+            onDeleteClick(post);
+          }}
+        >
           <i className="far fa-trash-alt"></i>
         </button>
 
