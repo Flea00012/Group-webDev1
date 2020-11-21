@@ -28,7 +28,7 @@ When sign up is complete the user can navigate to the Forum page and start viewi
 
 ![alt text](https://github.com/Flea00012/Group-webDev1/blob/main/frontend/public/post.png)
 
-## Class Diagram
+## React Component Diagram
 
 
 ![alt text](https://github.com/Flea00012/Group-webDev1/blob/main/frontend/public/Forum%20components%402x%20(2).png)
