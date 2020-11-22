@@ -5,7 +5,7 @@ FoodFeed is a forum for food lovers who want to exchange their ideas!
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![made-with-reactJS](https://img.shields.io/badge/Made%20with-ReactJS-1f425f.svg)](https://www.java.com/en/)
-[![made-with-java](https://img.shields.io/badge/Made%20with-Java-Spring-1f425f.svg)](https://www.java.com/en/)
+[![made-with-java](https://img.shields.io/badge/Made%20with-Java-1f425f.svg)](https://www.java.com/en/)
 
 ## Brief Summary
 
